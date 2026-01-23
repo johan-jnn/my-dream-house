@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
 import QuotesSection from '@/components/QuotesSection.vue'
 </script>
 
@@ -10,6 +11,7 @@ import QuotesSection from '@/components/QuotesSection.vue'
       subtitle="Bienvenue dans la maison de vos rêves"
       background-image="/images/house.jpg"
     />
+    <AboutSection />
     <QuotesSection />
   </main>
 </template>

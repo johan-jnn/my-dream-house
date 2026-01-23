@@ -2,9 +2,9 @@
 name: Pull Request Validator
 
 on:
-  push:
+  pull_request_target:
     branches:
-      - feat/create-pull-request-CI
+      - dev
 
 jobs:
   tests:

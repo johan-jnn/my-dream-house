@@ -25,9 +25,6 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Keep only production package
-        run: bun remove --production
-
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

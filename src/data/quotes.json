@@ -1,0 +1,34 @@
+{
+  "sliders": [
+    {
+      "id": 1,
+      "theme": "L'architecture de l'âme",
+      "quotes": [
+        "Une maison sans fenêtre est comme une pensée sans doute : lumineuse mais suffocante.",
+        "Le parquet grince car il porte le poids de nos décisions non assumées.",
+        "Celui qui construit un mur construit aussi le silence qu'il contient.",
+        "La porte d'entrée est la métaphore ultime : on ne sait jamais si on entre ou si on sort de soi-même."
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "Le mobilier existentiel",
+      "quotes": [
+        "Une chaise vide n'attend personne, elle médite sur l'absurdité de sa propre fonction.",
+        "Le canapé est le témoin silencieux de toutes les conversations que nous n'avons jamais eues.",
+        "Ranger sa chambre, c'est accepter que le chaos intérieur ne se résoudra pas par l'ordre extérieur.",
+        "L'étagère Billy d'IKEA représente la démocratisation du vide organisé."
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "La plomberie métaphysique",
+      "quotes": [
+        "L'eau qui coule du robinet ne revient jamais : méditons sur l'irréversibilité de la vaisselle.",
+        "Un évier bouché est une invitation à contempler nos propres blocages émotionnels.",
+        "La douche est le seul endroit où pleurer et se laver sont philosophiquement indiscernables.",
+        "Celui qui tire la chasse d'eau tire aussi un trait sur ses certitudes."
+      ]
+    }
+  ]
+}

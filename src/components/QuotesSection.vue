@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import QuoteSlider from "@/components/QuoteSlider.vue";
-import quotesData from "@/data/quotes.json";
+import { onMounted, ref } from "vue";
+
+let sentences = ref([]);
+
+onMounted(async () => {
+  const res = await fetch("/data/quotes.json");
+  sentences.value = await res.json();
+});
 </script>
 
 <template>
@@ -13,7 +20,7 @@ import quotesData from "@/data/quotes.json";
     </p>
     <div class="space-y-20">
       <QuoteSlider
-        v-for="(slider, index) in quotesData.sliders"
+        v-for="(slider, index) in sentences"
         :key="slider.id"
         :theme="slider.theme"
         :quotes="slider.quotes"

@@ -7,7 +7,7 @@ on:
       - released
 
 permissions:
-  actions: write
+  contents: write
 
 jobs:
   deploy-app:

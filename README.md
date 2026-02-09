@@ -4,8 +4,8 @@ A small website that has a really cool repository with very skilled developpers.
 
 ## Collaborateurs
 
-Enzo DI GIOVANNI
-Johan JANIN
+- Enzo DI GIOVANNI
+- Johan JANIN
 
 ## Stack
 
@@ -98,3 +98,28 @@ git push origin feat/add-some-content-on-homepage
 
 - **`git stash apply`** : Applique les modifications mais conserve le stash dans la liste (utile si on veut l'appliquer sur plusieurs branches)
 - **`git stash pop`** : Applique les modifications ET supprime le stash de la liste (usage standard)
+
+## Résolution de conflit
+
+Durant la [pull request #30](https://github.com/johan-jnn/my-dream-house/pull/30), il y a eu un conflit dans le fichier [QuoteSlider.vue](./src/components/QuoteSlider.vue).
+
+La PR nous a demandée de la résoudre avant de pouvoir merger vers `dev`.
+
+La PR étant initié par Enzo, la résolution a été faite par Johan. Il a du récupérer le contenu de la branche de la PR.
+
+```sh
+git fetch
+git switch style/adjust-font-size-on-quote
+
+git merge origin/dev
+```
+
+Après avoir résolu les conflits, on pousse les changements sur la branche :
+
+```sh
+git add .
+git commit -sm "fix: merge conflict on QuoteSlider.vue"
+git push origin style/adjust-font-size-on-quote
+```
+
+Puis la PR a pu être merge sur `dev`

@@ -1,0 +1,26 @@
+# When pull request --> dev, build to check if everything's ok + Unit test (if needed)
+name: Pull Request Validator
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+    branches:
+      - dev
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Installing bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Installing deps
+        run: bun install
+
+      - name: Build
+        run: bun run build

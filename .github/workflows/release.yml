@@ -1,0 +1,60 @@
+# CI to Build and deploy release
+name: Build and deploy release
+
+on:
+  release:
+    types:
+      - released
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Installing bun
+        uses: oven-sh/setup-bun@v2
+
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Installing build dependencies
+        run: bun install
+
+      - name: Build project
+        run: bun run build
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          publish_branch: gh-pages
+          full_commit_message: "Deployement of release '${{ github.event.release.name }}' (${{ github.event.release.tag_name }})"
+          force_orphan: true
+
+  update-branches:
+    name: Update main & dev branches
+    runs-on: ubuntu-slim
+    needs:
+      - deploy-app
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - uses: peaceiris/actions-gh-pages@v4
+        name: Updating branch main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          full_commit_message: "[RELEASE] ${{ github.event.release.name }}"
+          force_orphan: true
+
+      - uses: peaceiris/actions-gh-pages@v4
+        name: Mergin to branch dev
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: dev
+          full_commit_message: "[MERGE-RELEASE] ${{ github.event.release.name }}"

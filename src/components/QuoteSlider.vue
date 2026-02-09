@@ -37,7 +37,7 @@ defineProps<{
         <span
           v-for="(quote, index) in quotes"
           :key="index"
-          class="shrink-0 text-lg italic text-slate-700"
+          class="shrink-0 text-2xl italic text-slate-600"
         >
           "{{ quote }}"
         </span>

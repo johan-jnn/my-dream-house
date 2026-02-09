@@ -2,6 +2,11 @@
 
 A small website with a cool repo to show off our ci and collaboration skills
 
+## Collaborateurs
+
+Enzo DI GIOVANNI
+Johan JANIN
+
 ## Stack
 
 - [Vite](https://vite.dev/)

@@ -1,6 +1,6 @@
 # My Dream House
 
-A small website with a cool repo to show off our ci and collaboration skills
+A small website that has a really cool repository with very skilled developpers.
 
 ## Stack
 
